@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Spotify</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="menu">
+                <a id="inicio" class="active" href="index.html"><span><img src="img/home.svg" alt=""></span>Inicio</a>
+                <a id="cancionesFavoritas" style="cursor: pointer;"><span><img src="img/heart.svg"
+                            alt=""></span>Canciones que te gustan</a>
+                <a href="#" id="botonAñadir" style="cursor: pointer;"><span><img src="img/add.svg" alt=""></span>Añadir
+                    canción</a>
+            </div>
+            <div id="addSongModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="closeModal">&times;</span>
+                    <h2>Añadir Canción</h2>
+                    <form id="song-form">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" name="title" required><br>
+
+                        <label for="artist">Artista:</label>
+                        <input type="text" id="artist" name="artist" required><br>
+
+                        <label for="filepath">Archivo de audio (MP3):</label>
+                        <input type="file" id="filepath" name="filepath" accept="audio/*" required><br>
+                        
+                        <label for="cover">Imagen de portada (JPG/PNG):</label>
+                        <input type="file" id="cover" name="cover" accept="image/*" required><br>
+                        
+
+                        <button type="submit">Añadir Canción</button>
+                    </form>
+                </div>
+            </div>
+            </nav>
+
+        </aside>
+        <section>
+            <header>
+                <div class="botones_prev_next">
+                    <span class="btn_prev"><img src="img/prev.svg" alt=""></span>
+                    <span class="btn_next"><img src="img/next.svg" alt=""></span>
+                </div>
+
+                <div class="suscribcion">
+                    <div class="perfil">
+                        <span class="circulo"><img src="img/user.svg" alt=""></span>
+                        <span class="nombre">Carlos</span>
+                        <span><img src="img/salir.svg" alt=""></span>
+                    </div>
+                </div>
+            </header>
+            <div class="contenedor_degradado">
+
+            </div>
+            <div class="contenedor_contenido">
+                <div class="titulos">
+                    <h1>Canciones</h1>
+                </div>
+                <div id="cardsContainer">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="song-info">
+                <img src="" alt="Portada" class="track-art" id="track-art-footer">
+                <div>
+                    <span class="track-name" id="track-name-footer">Título</span><br>
+                    <span class="track-artist" id="track-artist-footer">Artista</span>
+                </div>
+            </div>
+
+            <div class="control-play">
+                <div class="controles">
+                    <div class="random-track">
+                        <i class="fas fa-random fa-2xx" style="margin-right: 20px;" title="random"></i>
+                    </div>
+                    <img src="img/prev_footer.svg" alt="Anterior" id="prev-track">
+                    <img src="img/play_footer.svg" alt="Reproducir/Pausar" id="playpause-track">
+                    <img src="img/next_footer.svg" alt="Siguiente" id="next-track">
+                    <div class="repeat-track">
+                        <i class="fa fa-repeat fa-2xx" style="margin-left: 20px;" title="repeat"></i>
+                    </div>
+                </div>
+                <div class="progreso">
+                    <span id="current-time">0:00</span>
+                    <input type="range" class="barra_progreso" id="seek_slider" min="0" max="100" value="0">
+                    <span id="total-duration">0:00</span>
+                </div>
+            </div>
+            <div class="volume-control">
+                <input type="range" id="volume_slider" min="0" max="100" value="50">
+            </div>
+        </footer>
+
+    </div>
+
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
